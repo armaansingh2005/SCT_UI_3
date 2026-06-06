@@ -1,0 +1,860 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+:root{
+
+--primary:#2563eb;
+--primary-light:#dbeafe;
+
+--success:#22c55e;
+
+--bg:#f8fafc;
+--card:#ffffff;
+
+--text:#0f172a;
+--text-light:#64748b;
+
+--border:#e2e8f0;
+
+--shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+--radius:20px;
+
+--transition:.3s ease;
+}
+
+body.dark{
+
+--bg:#0f172a;
+--card:#1e293b;
+
+--text:#f8fafc;
+--text-light:#cbd5e1;
+
+--border:#334155;
+
+--shadow:
+0 10px 30px rgba(0,0,0,.4);
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+transition:var(--transition);
+min-height:100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 6%;
+
+position:sticky;
+top:0;
+
+background:rgba(255,255,255,.8);
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid var(--border);
+
+z-index:999;
+}
+
+body.dark .header{
+background:rgba(15,23,42,.85);
+}
+
+.logo{
+
+font-size:1.4rem;
+font-weight:800;
+
+display:flex;
+align-items:center;
+gap:10px;
+
+color:var(--primary);
+}
+
+.header-actions{
+
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+#themeToggle{
+
+width:45px;
+height:45px;
+
+border:none;
+cursor:pointer;
+
+border-radius:50%;
+
+background:var(--card);
+
+color:var(--text);
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+}
+
+#themeToggle:hover{
+transform:rotate(20deg);
+}
+
+.secure-badge{
+
+background:var(--success);
+color:white;
+
+padding:10px 16px;
+
+border-radius:999px;
+
+font-weight:600;
+
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+/* =========================
+   CASE STUDY
+========================= */
+
+.case-study{
+
+padding:60px 6%;
+text-align:center;
+}
+
+.case-study h1{
+
+font-size:2.8rem;
+margin-bottom:20px;
+}
+
+.case-study p{
+
+max-width:800px;
+margin:auto;
+
+color:var(--text-light);
+
+line-height:1.8;
+}
+
+.research-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+margin-top:40px;
+}
+
+.research-card{
+
+background:var(--card);
+
+padding:30px;
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+}
+
+.research-card:hover{
+
+transform:translateY(-8px);
+}
+
+.research-card h3{
+
+font-size:2rem;
+color:var(--primary);
+
+margin-bottom:10px;
+}
+
+/* =========================
+   ANALYTICS
+========================= */
+
+.analytics{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:20px;
+
+padding:0 6%;
+margin-bottom:50px;
+}
+
+.metric{
+
+background:var(--card);
+
+padding:25px;
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+text-align:center;
+}
+
+.metric h2{
+
+font-size:2rem;
+color:var(--primary);
+margin-bottom:10px;
+}
+
+.metric p{
+
+color:var(--text-light);
+}
+
+/* =========================
+   STEPPER
+========================= */
+
+.stepper{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin:50px 0;
+}
+
+.step{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+gap:8px;
+}
+
+.circle{
+
+width:50px;
+height:50px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-weight:700;
+
+background:#cbd5e1;
+color:#fff;
+}
+
+.step.active .circle{
+
+background:var(--primary);
+}
+
+.step span{
+
+font-size:.9rem;
+font-weight:600;
+}
+
+.line{
+
+width:100px;
+height:4px;
+
+background:#cbd5e1;
+
+margin:0 10px;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.container{
+
+display:grid;
+
+grid-template-columns:
+2fr 1fr;
+
+gap:30px;
+
+padding:0 6% 80px;
+}
+
+/* =========================
+   CHECKOUT CARDS
+========================= */
+
+.card{
+
+background:rgba(255,255,255,.75);
+
+backdrop-filter:blur(18px);
+
+padding:30px;
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+margin-bottom:25px;
+
+border:1px solid rgba(255,255,255,.2);
+}
+
+body.dark .card{
+
+background:rgba(30,41,59,.7);
+}
+
+.card h2{
+
+margin-bottom:25px;
+}
+
+/* =========================
+   FORM GRID
+========================= */
+
+.grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+input{
+
+width:100%;
+
+padding:15px;
+
+border-radius:14px;
+
+border:1px solid var(--border);
+
+background:var(--card);
+
+color:var(--text);
+
+font-size:.95rem;
+
+outline:none;
+
+transition:var(--transition);
+}
+
+input:focus{
+
+border-color:var(--primary);
+
+box-shadow:
+0 0 0 4px rgba(37,99,235,.15);
+}
+
+/* =========================
+   SHIPPING
+========================= */
+
+.shipping-options{
+
+display:flex;
+gap:20px;
+}
+
+.shipping{
+
+flex:1;
+
+padding:20px;
+
+border-radius:18px;
+
+cursor:pointer;
+
+border:2px solid var(--border);
+
+transition:var(--transition);
+}
+
+.shipping:hover{
+
+transform:translateY(-5px);
+}
+
+.shipping.active{
+
+border-color:var(--primary);
+
+background:var(--primary-light);
+}
+
+.shipping h3{
+
+margin-bottom:8px;
+}
+
+/* =========================
+   PAYMENT
+========================= */
+
+.payment-tabs{
+
+display:flex;
+gap:10px;
+
+margin-bottom:20px;
+}
+
+.tab{
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-weight:600;
+
+background:#e2e8f0;
+
+transition:var(--transition);
+}
+
+.tab.active{
+
+background:var(--primary);
+color:white;
+}
+
+.upi-input{
+
+margin-bottom:25px;
+}
+
+/* =========================
+   CREDIT CARD
+========================= */
+
+.credit-card{
+
+height:220px;
+
+border-radius:24px;
+
+padding:25px;
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#1d4ed8,
+#1e40af
+);
+
+color:white;
+
+margin-bottom:25px;
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+
+box-shadow:
+0 20px 40px rgba(37,99,235,.3);
+}
+
+.chip{
+
+width:60px;
+height:40px;
+
+background:gold;
+
+border-radius:8px;
+}
+
+#cardNumber{
+
+letter-spacing:3px;
+
+font-size:1.4rem;
+}
+
+.card-bottom{
+
+display:flex;
+justify-content:space-between;
+}
+
+.card-bottom p{
+
+font-size:.8rem;
+opacity:.8;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary{
+
+position:sticky;
+top:110px;
+
+height:fit-content;
+
+background:var(--card);
+
+padding:30px;
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+}
+
+.summary h2{
+
+margin-bottom:20px;
+}
+
+.product{
+
+display:flex;
+gap:15px;
+
+align-items:center;
+
+margin-bottom:25px;
+}
+
+.product img{
+
+width:80px;
+height:80px;
+
+border-radius:14px;
+
+object-fit:cover;
+}
+
+.product span{
+
+margin-left:auto;
+font-weight:700;
+}
+
+/* =========================
+   COUPON
+========================= */
+
+.coupon{
+
+display:flex;
+gap:10px;
+
+margin-bottom:20px;
+}
+
+.coupon button{
+
+padding:14px 20px;
+
+border:none;
+
+border-radius:12px;
+
+background:var(--primary);
+
+color:white;
+
+cursor:pointer;
+}
+
+#couponMessage{
+
+margin-bottom:15px;
+
+font-size:.9rem;
+
+font-weight:600;
+}
+
+/* =========================
+   TOTALS
+========================= */
+
+.totals div{
+
+display:flex;
+justify-content:space-between;
+
+margin:14px 0;
+}
+
+.grand{
+
+font-size:1.3rem;
+font-weight:800;
+}
+
+/* =========================
+   TRUST
+========================= */
+
+.trust{
+
+margin-top:25px;
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:12px;
+}
+
+.trust div{
+
+padding:12px;
+
+border-radius:12px;
+
+background:rgba(37,99,235,.08);
+
+font-size:.9rem;
+
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+#placeOrder{
+
+width:100%;
+
+margin-top:25px;
+
+padding:18px;
+
+border:none;
+
+border-radius:16px;
+
+background:var(--primary);
+
+color:white;
+
+font-size:1rem;
+font-weight:700;
+
+cursor:pointer;
+
+transition:var(--transition);
+}
+
+#placeOrder:hover{
+
+transform:translateY(-3px);
+}
+
+/* =========================
+   SUCCESS MODAL
+========================= */
+
+#successModal{
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(0,0,0,.65);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+}
+
+.success-box{
+
+background:var(--card);
+
+padding:50px;
+
+border-radius:30px;
+
+text-align:center;
+
+width:500px;
+
+max-width:90%;
+}
+
+.success-box i{
+
+font-size:5rem;
+
+color:var(--success);
+
+margin-bottom:20px;
+}
+
+.timeline{
+
+display:flex;
+
+justify-content:space-between;
+
+margin:30px 0;
+}
+
+.timeline div{
+
+padding:10px;
+
+border-radius:12px;
+
+background:
+rgba(34,197,94,.12);
+
+font-size:.85rem;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.card,
+.metric,
+.research-card,
+.summary{
+
+animation:
+fadeUp .7s ease;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.summary{
+position:relative;
+top:0;
+}
+}
+
+@media(max-width:768px){
+
+.analytics{
+grid-template-columns:1fr 1fr;
+}
+
+.research-grid{
+grid-template-columns:1fr;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.shipping-options{
+flex-direction:column;
+}
+
+.stepper{
+display:none;
+}
+
+.case-study h1{
+font-size:2rem;
+}
+}
+
+@media(max-width:480px){
+
+.analytics{
+grid-template-columns:1fr;
+}
+
+.header{
+padding:15px;
+}
+
+.logo{
+font-size:1.1rem;
+}
+
+.secure-badge{
+display:none;
+}
+
+.credit-card{
+height:190px;
+}
+
+#cardNumber{
+font-size:1rem;
+}
+}
